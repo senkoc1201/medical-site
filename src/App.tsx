@@ -19,8 +19,7 @@ function App() {
   };
 
   return (
-    <div className="font-sans bg-gray-950 text-gray-100">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-gray-950 to-gray-950"></div>
+    <div className="font-sans bg-black text-white">
       <div className="relative">
         <Navbar openContactModal={openContactModal} />
         <Hero openContactModal={openContactModal} />
