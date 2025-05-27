@@ -7,7 +7,6 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ openContactModal }) => {
-  // List of checkpoints that will animate in sequence
   const checkpoints = [
     'AI-Powered Solutions',
     'Advanced Data Analytics',
@@ -69,8 +68,8 @@ const Hero: React.FC<HeroProps> = ({ openContactModal }) => {
                 
                 <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-4 sm:p-8 shadow-xl relative z-10">
                   <img 
-                    src="https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                    alt="AI Analytics Dashboard" 
+                    src="https://images.pexels.com/photos/8439093/pexels-photo-8439093.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                    alt="AI and Human Interaction" 
                     className="rounded-2xl shadow-lg w-full"
                   />
                 </div>

@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { X, Mail, FileText } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { X } from 'lucide-react';
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -7,19 +7,14 @@ interface ContactModalProps {
 }
 
 const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
-  // Close modal when escape key is pressed
-  useEffect(() => {
-    const handleEscapeKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isOpen) {
-        onClose();
-      }
-    };
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    organization: '',
+    newsletter: false
+  });
 
-    document.addEventListener('keydown', handleEscapeKey);
-    return () => document.removeEventListener('keydown', handleEscapeKey);
-  }, [isOpen, onClose]);
-
-  // Prevent body scrolling when modal is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -32,69 +27,116 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
     };
   }, [isOpen]);
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission here
+    console.log(formData);
+    onClose();
+  };
+
   if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
-      {/* Modal Backdrop */}
       <div 
         className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm"
         onClick={onClose}
       />
       
-      {/* Modal Content */}
       <div className="relative bg-white rounded-xl shadow-2xl max-w-md w-full mx-4 overflow-hidden animate-fadeIn">
         <div className="p-6">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-2xl font-bold text-gray-900">Contact Us</h2>
+          <div className="flex justify-end">
             <button 
               onClick={onClose}
-              className="text-gray-500 hover:text-gray-700 transition-colors"
+              className="text-gray-400 hover:text-gray-600 transition-colors"
             >
               <X size={24} />
             </button>
           </div>
 
-          <p className="text-gray-600 mb-6">
-            We'd love to hear from you. Get in touch with our team through any of the following options:
-          </p>
-
-          <div className="space-y-4">
-            <a 
-              href="mailto:contact@augenai.com" 
-              className="flex items-center p-4 border border-gray-200 rounded-lg hover:bg-blue-50 hover:border-blue-200 transition-all"
-            >
-              <div className="bg-blue-100 p-2 rounded-full mr-4">
-                <Mail className="text-blue-600" size={20} />
-              </div>
-              <div>
-                <h3 className="font-medium text-gray-900">Email Us</h3>
-                <p className="text-sm text-gray-600">contact@augenai.com</p>
-              </div>
-            </a>
-
-            <a 
-              href="https://docs.google.com/forms/d/e/1FAIpQLSf7xKTch0eDSSt58g6wbVe4gGM4xK0K5UOIaRRB-oM1Vxj1xQ/viewform"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center p-4 border border-gray-200 rounded-lg hover:bg-blue-50 hover:border-blue-200 transition-all"
-            >
-              <div className="bg-blue-100 p-2 rounded-full mr-4">
-                <FileText className="text-blue-600" size={20} />
-              </div>
-              <div>
-                <h3 className="font-medium text-gray-900">Contact Form</h3>
-                <p className="text-sm text-gray-600">Fill out our Google Form</p>
-              </div>
-            </a>
+          <div className="mb-6">
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">Try our platform</h2>
+            <p className="text-gray-600">
+              Be one of the first to try our platform for free and receive a 50% lifetime discount.
+            </p>
+            <p className="text-gray-600">
+              Leave your contact for our sales team to assist you.
+            </p>
           </div>
 
-          <button
-            onClick={onClose}
-            className="w-full mt-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors"
-          >
-            Close
-          </button>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <input
+                type="text"
+                placeholder="Name*"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                value={formData.name}
+                onChange={(e) => setFormData({...formData, name: e.target.value})}
+                required
+              />
+            </div>
+
+            <div>
+              <input
+                type="email"
+                placeholder="Email address*"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                value={formData.email}
+                onChange={(e) => setFormData({...formData, email: e.target.value})}
+                required
+              />
+            </div>
+
+            <div className="relative">
+              <div className="absolute inset-y-0 left-0 flex items-center pl-4">
+                <span className="text-gray-500">🇬🇧</span>
+              </div>
+              <input
+                type="tel"
+                placeholder="Phone number"
+                className="w-full pl-12 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                value={formData.phone}
+                onChange={(e) => setFormData({...formData, phone: e.target.value})}
+              />
+            </div>
+
+            <div>
+              <input
+                type="text"
+                placeholder="Organization name"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                value={formData.organization}
+                onChange={(e) => setFormData({...formData, organization: e.target.value})}
+              />
+            </div>
+
+            <div className="flex items-center">
+              <input
+                type="checkbox"
+                id="newsletter"
+                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                checked={formData.newsletter}
+                onChange={(e) => setFormData({...formData, newsletter: e.target.checked})}
+              />
+              <label htmlFor="newsletter" className="ml-2 text-gray-600">
+                Subscribe to Medical newsletter.
+              </label>
+            </div>
+
+            <button
+              type="submit"
+              className="w-full py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg font-medium transition-colors"
+            >
+              Send data
+            </button>
+
+            <p className="text-xs text-gray-500 mt-4">
+              *Required fields. By continuing you are accepting our{' '}
+              <a href="#" className="text-blue-600 hover:underline">Terms of Service</a>
+              {' '}and{' '}
+              <a href="#" className="text-blue-600 hover:underline">Privacy Policy</a>.
+            </p>
+          </form>
         </div>
       </div>
     </div>
