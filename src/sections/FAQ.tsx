@@ -52,7 +52,7 @@ const FAQ = () => {
     },
     {
       question: 'What medical specialities are available?',
-      answer: '1'
+      answer: `Cardiology</br>Cardiology Follow-up Consultation`
     }
   ];
 
