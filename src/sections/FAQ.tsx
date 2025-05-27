@@ -52,8 +52,7 @@ const FAQ = () => {
     },
     {
       question: 'What medical specialities are available?',
-      answer: 'Cardiology,
-        as'
+      answer: 'Cardiology'
     }
   ];
 
