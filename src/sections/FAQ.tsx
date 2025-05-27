@@ -11,20 +11,79 @@ const FAQ = () => {
 
   const faqItems = [
     {
-      question: 'How does our AI platform work?',
-      answer: 'Our AI platform generates clinical reports and consultation notes from the audio of medical interviews, doctor dictation, or bullet points of a consultation or report.'
+      question: 'How does Medgical work?',
+      answer: 'Medgical is an AI platform that generates clinical reports and consultation notes from the audio of medical interviews, doctor dictation, or bullet points of a consultation or report.'
     },
     {
-      question: 'How can I try the platform?',
-      answer: 'You can try our platform for 15 days for free. Fill the contact form on our website or send us an e-mail to request a trial.'
+      question: 'How can I try Medgical?',
+      answer: 'You can try Medgical for 15 days for free. Fill the contact form on our website or send us an e-mail to request a trial.'
     },
     {
-      question: 'Is the platform secure?',
-      answer: 'Our platform is built to be secure. We use encryption to protect your data, and we follow all the latest GDPR and HIPAA regulations.'
+      question: 'Is Medgical secure?',
+      answer: 'Medgical is built to be secure. We use encryption to protect your data, and we follow all the latest GDPR and HIPAA regulations.'
     },
     {
-      question: 'How can I integrate the platform with my clinical management software?',
-      answer: 'Our platform is a standalone solution that can be integrated with any clinical or hospital management software through the browser. You can copy or download your notes and reports at any time and insert them into another software.'
+      question: 'How can I integrate Medgical with my clinical management software?',
+      answer: 'Medgical is a standalone platform that can be integrated with any clinical or hospital management software through the browser. You can copy or download your notes and reports at any time and insert them into another software.'
+    },
+    {
+      question: 'How long does it take to integrate Medgical in my practice?',
+      answer: 'Medgical implementation is fast and efficient. After filling the contact form, our team will contact you for a brief configuration process that usually takes only a hours.'
+    },
+    {
+      question: 'Can Medgical be customized to meet the specific needs of my clinic?',
+      answer: 'Definitely! We understand that every medical practice is unique. We offer customization services to ensure that our solution fits perfectly to your specific needs, whether by adjusting existing templates or creating new ones.'
+    },
+    {
+      question: 'What kind of technical support does Medgical offer?',
+      answer: 'We offer comprehensive technical support via phone, email, and live chat. Our team is available to help resolve any technical or operational issues you may have, ensuring that Medgical runs smoothly in your practice.'
+    },
+    {
+      question: 'Is Medgical compatible with mobile devices?',
+      answer: 'Yes. Medgical is a web-based platform that is compatible with all mobile devices, allowing doctors to access and use the platform anywhere, anytime, without the need to install any additional software.'
+    },
+    {
+      question: 'Are there any limitations on data volume or number of users for Medgical?',
+      answer: 'Medgical is designed to scale and support practices of any size, from individual practices to large hospitals, with no limits on data volume or number of users. This ensures that our platform can grow and adapt as your needs evolve.'
+    },
+    {
+      question: 'How does Medgical handle multiple languages and dialects?',
+      answer: 'Our AI is trained to recognize and process multiple languages and dialects, allowing Medgical to be used in various geographic regions, facilitating implementation in multilingual practices.'
+    },
+    {
+      question: 'What medical specialities are available?',
+      answer: 'Cardiology
+Cardiology Follow-up Consultation
+Cardioncology
+Cardioncology Follow-up Consultation
+Smoking Cessation
+Palliative Care
+Echocardiography
+Medical Board
+Family Medicine Adults
+Family Medicine Children: age 0-2
+Family Medicine Children: age 3-9
+Family Medicine Children: age 10-18
+Family Medicine Maternal Health
+Discharge Notes
+Discharge Notes for Cardiac Insufficiency
+General Discharge Notes
+Orthopedics Follow-up Consultation
+Orthopedics Initial Consultation
+Pacemaker
+Referral Request
+Pediatrics: age 0-2
+Pediatrics: age 3-9
+Pediatrics: age 10-18
+Pacing
+Pediatric Psychology
+Pediatric Psychology Follow-up Consultation
+Sleep Pneumology
+General Pulmonology
+General Pulmonology Follow-up Consultation
+Radiation Oncology
+Clinical Report
+Magnetic Resonance'
     }
   ];
 
