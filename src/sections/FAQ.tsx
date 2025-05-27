@@ -52,38 +52,7 @@ const FAQ = () => {
     },
     {
       question: 'What medical specialities are available?',
-      answer: 'Cardiology
-Cardiology Follow-up Consultation
-Cardioncology
-Cardioncology Follow-up Consultation
-Smoking Cessation
-Palliative Care
-Echocardiography
-Medical Board
-Family Medicine Adults
-Family Medicine Children: age 0-2
-Family Medicine Children: age 3-9
-Family Medicine Children: age 10-18
-Family Medicine Maternal Health
-Discharge Notes
-Discharge Notes for Cardiac Insufficiency
-General Discharge Notes
-Orthopedics Follow-up Consultation
-Orthopedics Initial Consultation
-Pacemaker
-Referral Request
-Pediatrics: age 0-2
-Pediatrics: age 3-9
-Pediatrics: age 10-18
-Pacing
-Pediatric Psychology
-Pediatric Psychology Follow-up Consultation
-Sleep Pneumology
-General Pulmonology
-General Pulmonology Follow-up Consultation
-Radiation Oncology
-Clinical Report
-Magnetic Resonance'
+      answer: '1'
     }
   ];
 
