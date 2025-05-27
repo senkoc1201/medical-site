@@ -11,7 +11,7 @@ const Hero: React.FC<HeroProps> = ({ openContactModal }) => {
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="w-full lg:w-1/2">
-            <AnimatedElement animation="fadeInUp" delay={200}>
+            <AnimatedElement animation="fadeInUp\" delay={200}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight text-white mb-6">
                 Transform your medical practice with AI
               </h1>
