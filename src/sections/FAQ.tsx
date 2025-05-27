@@ -50,10 +50,42 @@ const FAQ = () => {
       question: 'How does Medgical handle multiple languages and dialects?',
       answer: 'Our AI is trained to recognize and process multiple languages and dialects, allowing Medgical to be used in various geographic regions, facilitating implementation in multilingual practices.'
     },
-    {
-      question: 'What medical specialities are available?',
-      answer: 'Cardiology'
-    }
+{
+  question: 'What medical specialities are available?',
+  answer: `Cardiology
+Cardiology Follow-up Consultation
+Cardioncology
+Cardioncology Follow-up Consultation
+Smoking Cessation
+Palliative Care
+Echocardiography
+Medical Board
+Family Medicine Adults
+Family Medicine Children: age 0-2
+Family Medicine Children: age 3-9
+Family Medicine Children: age 10-18
+Family Medicine Maternal Health
+Discharge Notes
+Discharge Notes for Cardiac Insufficiency
+General Discharge Notes
+Orthopedics Follow-up Consultation
+Orthopedics Initial Consultation
+Pacemaker
+Referral Request
+Pediatrics: age 0-2
+Pediatrics: age 3-9
+Pediatrics: age 10-18
+Pacing
+Pediatric Psychology
+Pediatric Psychology Follow-up Consultation
+Sleep Pneumology
+General Pulmonology
+General Pulmonology Follow-up Consultation
+Radiation Oncology
+Clinical Report
+Magnetic Resonance`
+}
+
   ];
 
   return (
@@ -93,8 +125,11 @@ const FAQ = () => {
                   }`}
                 >
                   <div className="p-5 text-gray-400 border-t border-gray-800">
-                    {item.answer}
-                  </div>
+  {item.answer.split('\n').map((line, i) => (
+    <p key={i} className="mb-1">{line}</p>
+  ))}
+</div>
+
                 </div>
               </div>
             </AnimatedElement>
